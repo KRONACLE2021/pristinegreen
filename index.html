@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PristineGreen - Website</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
+</head>
+<body>
+  <header>
+    <img class="logo, logo img" src="images/Website_PristineGreenLogo.png " alt="PristineGreenLogo">
+  </div>
+    <div class="waffle-bar">
+      <!-- Waffle bar content, e.g., menu icon or links -->
+      <a href="#menu" class="menu-icon">&#9776;</a>
+      <nav class="menu-links">
+    <div class="logo">
+    </div>
+        <li><a href="#ecommerce">Shop</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <hr>
+
+<section>
+    <div class="reset">
+      <div class="ticker">
+        <p>Great services and great prices shop with us today!.</p>
+      </div>
+    </div>
+  </header>
+  
+</section>
+  
+  <main>
+    <section id="btn-hero">
+        <a href="#ecommerce" class="btn">Shop Now</a>
+      </section>
+
+
+    <section id="ecommerce">
+      <h1>Shop Our Products</h1>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img class="flip-card-front img" src="images/PristineLandscapingImage.png" alt="LandScaping">
+          </div>
+          <div class="flip-card-back">
+            <h2>LANDSCAPING</h2>
+            <p>We specialize in crafting beautiful landscapes that captivate and inspire. With a passion for detail and a commitment to excellence, we bring your vision to life. Contact us today and let’s create something remarkable together.</p>
+            <a href="#" class="btn">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="images/product2.jpg" alt="Product 2">
+          </div>
+          <div class="flip-card-back">
+            <h2>HOUSEHOLD SERVICES</h2>
+            <p>Household Service provides reliable and efficient solutions for all your home maintenance needs. From minor repairs to routine upkeep, trust our expertise to keep your home in perfect condition.</p>
+            <a href="#" class="btn">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h1>About Us</h1>
+      <p>Placeholder for about us section.</p>
+    </section>
+
+      </section>
+      <section>
+        <div class="social-links">
+          <h1>Social Media</h1>
+          <p>For inquiries or assistance, please reach out to us:</p>
+          <ul>
+            <li>Email: pristinegreen@example.com</li>
+            <li>Phone: +1 343 585 3682</li>
+            <li>Address: 123 Main St, City, Country</li>
+          </ul>
+          <div class="social-icon">
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+      </section>
+      <section id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-form">
+          <form id="contactForm" action="send_email.php" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+      </section>      
+  </main>
+
+  <footer>
+    <p>Made by Ashton Brisson all rights reserved! © ❤️</p>
+  </footer>
+</body>
+</html>
+
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    var form = this;
+    var formData = new FormData(form);
+    
+    fetch(form.action, {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.status === 'success') {
+        alert(data.message); // You can replace alert with any other method to display the message
+        form.reset(); // Optionally reset the form
+      } else {
+        alert(data.message); // Display error message
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('Oops! Something went wrong. Please try again later.'); // Display generic error message
+    });
+  });
+  </script>
+  
